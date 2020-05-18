@@ -7,7 +7,7 @@ include("./rest.jl")
 
 
 """
-get_dataset(tableName::String)
+    get_dataset(tableName::String)
 
 Returns the entire dataset.
 It is not recommended to retrieve datasets with more than 100k rows using this method.

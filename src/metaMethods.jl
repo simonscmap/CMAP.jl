@@ -7,7 +7,7 @@ include("./match.jl")
 
 
 """
-get_catalog()
+    get_catalog()
 
 Returns a dataframe containing full Simons CMAP catalog of variables.
 
@@ -25,7 +25,7 @@ end
 
 
 """
-search_catalog(keywords::String)
+    search_catalog(keywords::String)
 
 Returns a dataframe containing a subset of Simons CMAP catalog of variables. 
 All variables at Simons CMAP catalog are annotated with a collection of semantically related keywords. 
@@ -58,7 +58,7 @@ end
 
 
 """
-datasets()
+    datasets()
 
 Returns a dataframe containing the list of data sets hosted by Simons CMAP database.
 
@@ -75,7 +75,7 @@ end
 
 
 """
-head(tableName::String, rows::Integer=5)
+    head(tableName::String, rows::Integer=5)
 
 Returns top records of a data set.
 
@@ -92,7 +92,7 @@ end
 
 
 """
-columns(tableName::String)
+    columns(tableName::String)
 
 Returns the list of data set columns.
 
@@ -110,7 +110,7 @@ end
 
 
 """
-get_dataset_ID(tableName::String)
+    get_dataset_ID(tableName::String)
 
 Returns dataset ID.
 
