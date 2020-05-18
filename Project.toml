@@ -1,0 +1,13 @@
+name = "CMAP"
+uuid = "f69479e0-993a-11ea-3331-494e9820f394"
+authors = ["Mohammad Dehghani Ashkezari"]
+version = "0.1.0"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
