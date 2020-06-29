@@ -5,4 +5,4 @@
 /Manifest.toml
 /dev/
 src/api_key.csv
-/api_key.csv
+*api_key.csv
