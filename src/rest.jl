@@ -72,7 +72,11 @@ get_api_key()
 """
 function get_api_key()
     keyFile = api_key_fname()
-    if !isfile(keyFile)
+    if isfile(keyFile)
+        return DataFrame(CSV.File(keyFile))[1, 1]
+    else if haskey(ENV, "CMAP_API_KEY")
+        return ENV["CMAP_API_KEY"]
+    else
         error("""
               API Key file not found. The following command will register the API key:
 
@@ -80,8 +84,6 @@ function get_api_key()
               set_api_key("Your API Key here")
               ```
               """)
-    else # Allow for environment variable secret API key for testing?
-        return get(ENV, "CMAP_API_KEY", DataFrame(CSV.File(keyFile))[1, 1])
     end
 end
 
