@@ -74,7 +74,7 @@ function get_api_key()
     keyFile = api_key_fname()
     if isfile(keyFile)
         return DataFrame(CSV.File(keyFile))[1, 1]
-    else if haskey(ENV, "CMAP_API_KEY")
+    elseif haskey(ENV, "CMAP_API_KEY")
         return ENV["CMAP_API_KEY"]
     else
         error("""
