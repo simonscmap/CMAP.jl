@@ -38,4 +38,4 @@ jobs:
       - uses: julia-actions/julia-uploadcodecov@latest
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-          API_KEY: ${{ secrets.API_KEY }}
+          CMAP_API_KEY: ${{ secrets.CMAP_API_KEY }}
