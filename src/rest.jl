@@ -72,10 +72,19 @@ get_api_key()
 """
 function get_api_key()
     keyFile = api_key_fname()
-    if ~isfile(keyFile)
-        error("API Key file not found. The following command will register the API key:\n\nset_api_key(key::String)\n\n")
-    end    
-    return DataFrame(CSV.File(keyFile))[1, 1]
+    if isfile(keyFile)
+        return DataFrame(CSV.File(keyFile))[1, 1]
+    elseif haskey(ENV, "CMAP_API_KEY")
+        return ENV["CMAP_API_KEY"]
+    else
+        error("""
+              API Key file not found. The following command will register the API key:
+
+              ```
+              set_api_key("Your API Key here")
+              ```
+              """)
+    end
 end
 
 
